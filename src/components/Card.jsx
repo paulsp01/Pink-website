@@ -6,7 +6,7 @@ const Card = ({ id,
   category,
   price,
   discountPercentage,
-  thumbnail
+  thumbnail,increase
   }) => {
 
 
@@ -19,7 +19,7 @@ const Card = ({ id,
       <div className="flex items-center justify-between w-full">
         <div className="bg-black/50 text-white py-1 px-3 rounded-xl">⭐ Popular</div>
         <button onClick={handleClick} className="text-2xl cursor-pointer ">
-          {isActive ? '❤️' : '🤍'}
+          {isActive ? '💜' : '🤍'}
         </button>
       </div>
         <div>
@@ -44,7 +44,7 @@ const Card = ({ id,
         <h1 >⭐⭐⭐⭐⭐{" "}<span className=" text-gray-600">4.9(98)</span></h1>
       </div>
     </div>
-    <button className=' cursor-pointer w-full rounded-xl py-2 px-4  bg-gradient-to-r
+    <button onClick={increase} className=' cursor-pointer w-full rounded-xl py-2 px-4  bg-gradient-to-r
 from-violet-600
 to-purple-700
 transition-all

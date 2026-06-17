@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import Card from '../components/Card.jsx'
 import illu from "../images/pngegg.png"
 
-const Product = () => {
+const Product = ({increase}) => {
      const [products, setProducts]=useState([])
         const API="https://dummyjson.com/products"
     
@@ -28,7 +28,7 @@ const Product = () => {
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 gap-6 px-10 py-2'>
         
       {products?.map((product) => (
-        <Card key={product.id} {...product} />
+        <Card increase={increase} key={product.id} {...product} />
       ))}
     </div>
     </>

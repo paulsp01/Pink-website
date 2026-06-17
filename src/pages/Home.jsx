@@ -7,7 +7,7 @@ import carousel from "../images/carousel3.jpg"
 import { lazy } from 'react';
 
 
-const Home = () => {
+const Home = ({increase}) => {
     const [products, setProducts]=useState([])
     const API="https://dummyjson.com/products"
     
@@ -31,13 +31,13 @@ const Home = () => {
          <HeadingName title="New Arrivals" />
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 gap-6 px-10 py-2 '>
         {products?.slice(0, 4).map((item) => (
-          <Card key={item.id} {...item} />
+          <Card increase={increase} key={item.id} {...item} />
         ))}
       </div>
       <HeadingName title="Latest Deals" />
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 gap-6 px-10 py-2 '>
         {products?.slice(10, 15).map((item) => (
-          <Card key={item.id} {...item} />
+          <Card increase={increase} key={item.id} {...item} />
         ))}
       </div>
     </>
