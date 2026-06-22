@@ -7,18 +7,15 @@ import Product from './pages/Product'
 import Contact from './pages/Contact'
 
 const App = () => {
-  let [count,setCount]=React.useState(0)
-  function increase(){
-    setCount(count+1)
-  }
+ 
 
   return (
     <><Routes>
-      <Route path='/' element={<Layout count={count}/>}>
+      <Route path='/' element={<Layout />}>
        
-         <Route index element={<Home increase={increase}/>}/>
+         <Route index element={<Home />}/>
           <Route path='/about' element={<About/>}/>
-           <Route path='/product' element={<Product increase={increase}/>}/>
+           <Route path='/product' element={<Product />}/>
             <Route path='/contact' element={<Contact/>}/>
       </Route>
       </Routes>

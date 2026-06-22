@@ -1,19 +1,21 @@
 import React from 'react'
-
+import { CartContext } from '../productContextAPI/CartContext.jsx'
 const Card = ({ id,
   title,
   description,
   category,
   price,
   discountPercentage,
-  thumbnail,increase
+  thumbnail
   }) => {
 
-
+  
     const [isActive,setIsActive]=React.useState(false)
     function handleClick(){
       setIsActive(!isActive)
     }
+    let {count,increase}=React.useContext(CartContext)
+       
   return (
     <div className='rounded-lg shadow-lg shadow-[#7607de] bg-[linear-gradient(160deg,#f5428a_50%,#faf5f5_50%)] h-auto flex flex-col items-center justify-center p-4 space-y-4 hover:scale-105 transition-transform duration-300 '>
       <div className="flex items-center justify-between w-full">

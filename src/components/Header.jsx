@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from "../assets/pngwing.com.png"
 import { NavLink } from 'react-router-dom'
  import Login from '../pages/Login.jsx'
 import Signup from '../pages/Signup.jsx'
 import cart from "../images/cart.png"
+import { CartContext } from '../productContextAPI/CartContext.jsx'
 
-const Header = ({count}) => {
+const Header = () => {
   let [showloginpopup, setShowloginpopup] = React.useState(false)
     let [showsignuppopup, setShowsignuppopup] = React.useState(false)
+    let {count}=useContext(CartContext)
    
   function handleLoginClick(){
  setShowloginpopup(true)
